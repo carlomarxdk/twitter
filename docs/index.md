@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Fake Tweets: A Network Study
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
