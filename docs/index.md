@@ -3,6 +3,10 @@ title: Fake Tweets: A Network Study
 layout: default
 ---
 
+# Overview
+
+Recently tweeter has released the dataset with the accounts that are believed to be connected to the Russian Internet Research Agency and Iran. 
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
