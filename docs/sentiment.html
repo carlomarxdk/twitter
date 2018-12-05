@@ -53,11 +53,46 @@
                 <p class="mb-0">
                   The <b><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0026752">LabMT</a>
                   </b> wordlist was used to calculate the sentiment of each Tweet and profile description.
-                  These results were than analyzed in different ways.</p>
+                  These results were than analyzed in different ways.
+                </p>
             </blockquote>
 
+            <h1 class = "display-5">Difference between Tweets and Profile description</h1>
+            <div class = 'row' width = '80%'>
+              <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
+                <img src="./plots/tw_sentiment.png"  width="100%">
+                <p></p>
+                <p align="center">Figure 1: Tweet Sentiments</p>
+              </div>
+              <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
+                <img src="./plots/desc_sentiment.png"  width="100%">
+                <p></p>
+                <p align="center">Figure 2: Profile Descriptions</p>
+              </div>
+            </div>
+            <div class = "row">
+              <p>
+                The histogram of the sentiments of the tweets/descprtions can be found in Figure 1/2.
+                The average for the Tweets is $\approx 5.20 \pm 0.34$, and for the profile descprtions: $\approx 5.54 \pm 0.63$.
+              </p>
+              <p>
+                While the sentiment of the profile descriptions seems to be a little bit lower, the difference is inside the standard deviation, and therefore not significant.
+                In general, the distribution of the profile descriptions is much broader, than the one for the tweet sentiments.
+                However, this might be purely explained just by the fact, that the sample size for the descprtions is much lower.
+              </p>
+              <p>
+                In the Tweet histogram, there are outliers at certain sentiment values.
+                Those were removed, and to make those 2 distriutions directly compareable, both distributions were divided by ther maximum.
+                The result can be seen in the following <a href = "./plots/hist_sentiment_tw_desc.html">figure</a>:
+              </p>
+
+              <div class="container-fluid py-1">
+                  <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/hist_sentiment_tw_desc.html"></iframe>
+              </div>
+
+            </div>
+
             <h1 class ="display-5">Average Sentiment per Day</h1>
-            <p class="lead"></p>
             <div class="row">
               <p>
                 In the following <a href = "./plots/average_sentiment_per_day.html">figure</a>, the average sentiments for the <b>troll</b> tweets, and for <b><a href="https://hedonometer.org/about.html">whole</a></b> twitter can be compared. (Not the whole of Twitter, but Twitter’s Gardenhose feed, which represents approximately 10% of all Tweets.)
