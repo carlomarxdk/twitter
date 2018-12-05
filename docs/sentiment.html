@@ -32,28 +32,26 @@
               </li>
             </ul>
         </div>
-        
+
         <div class= "container py-3">
-            <h3 align="center" class="display-3">Sentiments Analysis</h3>
+            <h3 align="center" class="display-3">Sentiment Analysis</h3>
             <blockquote class="blockquote">
-                <p class="mb-0">The base for the analysis is the timespan of 9 year . It strats from <b>November 2009 </b> and follows untill <b>November 2018</b>. The hashtags analysis was performed both on all set of hashtags and hashtags written in English. Total number of unique hashtags used is approximatelly 72 thousand. At the same time, total number of unique hashtags written using latin alphabet is approximattely 56 thousand.</p>
+                <p class="mb-0">
+                  The <b><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0026752">LabMT</a>
+                  </b> wordlist was used to calculate the sentiment of each Tweet and profile description.
+                  These results were than analyzed in different ways.</p>
             </blockquote>
 
-            <h1 class ="display-5"> TF-IDF</h1>
-            <p class="lead">In order to calculate the TF-IDF (term frequency–inverse document frequency) for the each hashtag, we processed data so that we had list of all the hashtags that were used for each day (with repetitions) during the specified period. At the same time, we created a list that contained every unique hashtag for the whole period. </p>
+            <h1 class ="display-5">Average Sentiment per Day</h1>
+            <p class="lead"></p>
             <div class="row">
-                <div class="col-ld-7 col-md-7 col-xs-12 col-sm-12 ">
+              <p>
+                In the following <a href = "./plots/average_sentiment_per_day.html">figure</a>, the average sentiments for the <b>troll</b> troll tweets, and for <b>whole</b> twitter can be compared.
+              </p>
+              <div class="container-fluid py-1">
+                  <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/average_sentiment_per_day.html"></iframe>
+              </div>
 
-                    <p class="lead ">The results for the whole set of the tweets is displayed in the Figure 1 (image to the right). The size of the word depends on it's TF-IDF value. It can be observed that <b>СПБ</b> (Russian abbreveatio for Saint-Petersburg). More than that, large part of the <i>largest</i> words are Russian. </p>
-                    <p class="lead"> The second word is <b>news</b>, followed by <b>новости</b> (news), <b>sport </b>, <b>politics </b>. As the result, most of the top words are pretty generic, including <b>music</b>, <b>crime</b>, <b>tech</b> etc. If we go down the list, we can find some hashtags that are related to events or heavily disscussed topic, for example, <b>ДНР</b> (Donetsk People's Republic), <b>Крым</b> (Сrimea), <b>НевскиеНовости</b> (news portal located in Saint-Petersburg), <b>Украина</b> (Ukraine) etc.</p> 
-                </div>
-                <div class="col-ld-5 col-md-5 col-xs-12 col-sm-12">
-                    <img src="img/full_cloud.png"  width="100%">
-                    <p></p>
-                    <p align="center">Figure 1: TF-IDF for full set of hashtags</p>
-
-                </div>
-                
             </div>
             <div class="row">
                 <div class="col-ld-5 col-md-5 col-xs-12 col-sm-12">
@@ -63,7 +61,7 @@
                 </div>
                 <div class="col-ld-7 col-md-7 col-xs-12 col-sm-12 ">
                     <p class="lead">
-                        Same is true, if we perform calculate TF-IDF only on hashatgs that are written using latin alphabet (see, Figure 2). Cloud is full of generic hashtags such as news, sports, usa, world, local, politics and etc.  
+                        Same is true, if we perform calculate TF-IDF only on hashatgs that are written using latin alphabet (see, Figure 2). Cloud is full of generic hashtags such as news, sports, usa, world, local, politics and etc.
                     </p>
                     <p class="lead"></p>
 
@@ -75,7 +73,7 @@
             <h1 class ="display-5">Hashtag frequencies over time</h1>
 
         </div>
-        
+
         <div class="container-fluid py-1">
 
             <iframe width="100%" height="500" frameborder="0" scrolling="no" src="//plot.ly/~germans.savcisens/65.embed?autosize=True"></iframe>
