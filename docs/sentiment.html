@@ -60,12 +60,34 @@
             <p class="lead"></p>
             <div class="row">
               <p>
-                In the following <a href = "./plots/average_sentiment_per_day.html">figure</a>, the average sentiments for the <b>troll</b> troll tweets, and for <b><a href="https://hedonometer.org/about.html">whole</a></b> twitter can be compared. (Not the whole of Twitter, but Twitter’s Gardenhose feed, which represents approximately 10% of all Tweets.)
+                In the following <a href = "./plots/average_sentiment_per_day.html">figure</a>, the average sentiments for the <b>troll</b> tweets, and for <b><a href="https://hedonometer.org/about.html">whole</a></b> twitter can be compared. (Not the whole of Twitter, but Twitter’s Gardenhose feed, which represents approximately 10% of all Tweets.)
               </p>
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/average_sentiment_per_day.html"></iframe>
               </div>
-              To make this Graphe more explorable and make it easier to compare the different spikes, both time series where standardized ($\int$)
+            <p>
+              Some differences in the 2 sentiment time series are immediately striking.
+              Firstly, till April 2012, the day-to-day difference in the sentiments of the troll tweets is very high (i.e.: It jumps around a lot.)
+              The reason being is, that the number of Tweets in the dataset for that timepriod is very low, therefore the day-to-day variance is also higher.
+              The average sentiment/day over the whole period is $\approx 5.24 \pm 0.19$.
+              Thats significantely lower than the average sentiment/days of the Gardenhose feed $\approx 6.02 \pm 0.04$.
+              The average troll tweets is therefore significantely more negative, than the average Tweet.
+            </p>
+
+            <p>
+              To make this plot more explorable and make it easier to compare changes in activity across both time series, they were <b>standardized</b>.
+              So if $S(t)$ is the time series, the standardized version of the time series is $\bar{S}(t) = \left( S(t) - \text{avg}(S)\right)/\text{std}(S)$.
+              This plot can be found in the following <a href = "./plots/norm_sentiment_per_day.html">figure</a>.
+            </p>
+              <div class="container-fluid py-1">
+                  <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/norm_sentiment_per_day.html"></iframe>
+              </div>
+            <p>
+              Whats also striking about the troll sentiments is, that there seem to be well defined time periods, when the sentiment is lower.
+              For example, 10.May 2013 to 31.Jan 2014, the sentiment is about $0.15$ points lower than the sentiment before/after that time period.
+              Another dropoff happens in the period from the 19.Oct 2015 to the 27.Dec 2015.
+              This might be explained by specific operations of the <b>IRA</b> in that time periods.
+            </p>
 
             </div>
             <div class="row">
