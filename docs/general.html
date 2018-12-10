@@ -54,39 +54,44 @@
                 <span class="lead lead-lg display-3">Overview</span>
             </div>
         </div>
-        <div>
-        <h1 class='display-5'>
-            Basics
-            </h1>
-        </div>
-        <div class= "container mt-5">
-            <blockquote class="blockquote">
-                <p class="mb-0">
-                  Using the mentions,retweets and replys of each account, a network was created.
-                </p>
-            </blockquote>
-            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Full Network according to Languages</a></h1>
-
-              <div class="container-fluid py-1">
-                  <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_full_network.html"></iframe>
-                  <p align = 'center'>
-                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$.
-                  </p>
-              </div>
-
-            <p>
-              There are different clusters, most of them form according to the language of the nodes.
-              2 very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
-              They stand in contrast to the russian cluster, which is very interconnected with a lot of english accounts.
-              However, there is also a completely seperate english cluster forming on the lower right, without a lot of accounts from different languages.
-            </p>
-
-            <p>
-              For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>.
-            </p>
-
-
+        <div class="container">
+            <h1 class="display-5 py-2">Data</h1>
+            <div class="row">
+                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
+                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
+                                <h1 class="display-5">5.3 GB</h1>
+                                  <hr class="my-1">
+                                <h4>in size</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
+                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
+                                <h1>3.5 GB</h1>
+                                  <hr class="my-1">
+                                <h4>in size</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
+                    <div class="card bg-primary text-white mb-1 text-center bg-danger">       <div class="card-body">
+                                <h1>3.5 GB</h1>
+                                  <hr class="my-1">
+                                <h4>in size</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
+                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
+                                <h1>3.5 GB</h1>
+                                  <hr class="my-1">
+                                <h4>in size</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
