@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Fake Tweets Network</title>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="css/bootstrap4-hello-world.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap4-hello-world.css">
 
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
@@ -17,49 +17,59 @@
         <script type="text/javascript" async
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-
-
-
-
-
     </head>
+     
     <body>
-        <div class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <button class="navbar-toggler navbar-toggler-right" type="button"           data-toggle="collapse"
+                    data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Start</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="general.html">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="network.html">Network Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sentiment.html">Vocabulary and Sentiments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hashtags.html">Hashtag Analysis</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class=" jumbotron jumbotron jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
             <div class="container">
                 <h1 class="display-1 text-light text-uppercase">Fake Tweets</h1>
-                <span class="lead lead-lg display-3">A Network Study</span>
+                <span class="lead lead-lg display-3">Network Description</span>
             </div>
         </div>
-        <div class="container py-5">
-          <ul class="nav nav-pills">
-              <li class="nav-item">
-              <a class="nav-link" href="index.html">General Description</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#!">Network Analysis</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#!">Vocabulary Analysis</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#!">Hashtag Analysis</a>
-              </li>
-            </ul>
+        <div>
+        <h1 class='display-5'>
+            Basics
+            </h1>
         </div>
-
-        <div class= "container py-3">
-            <h3 align="center" class="display-3">Network Analysis</h3>
+        <div class= "container mt-5">
             <blockquote class="blockquote">
                 <p class="mb-0">
-                  Using the mentions,retweets and replys of each account, a network was created.
+                  Using the mentions,retweets and replys of each account, a network was created (If I talk about the network here, I always talk about the largest connected component. While there were always some unconnected nodes, most of them ($>95\%$) were always in the largest component.)
                 </p>
             </blockquote>
-            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Full Network according to Languages</a></h1>
+            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Full Network</a></h1>
 
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_full_network.html"></iframe>
                   <p align = 'center'>
-                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$.
+                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$. (Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays.)
                   </p>
               </div>
 
@@ -74,6 +84,25 @@
               For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>.
             </p>
 
+            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Subnetwork > 1000 Follower</a></h1>
+
+            <p>
+              Since this network is very big, and makes exploration of the relationshib between the differen accounts very difficult, a spereate network was created for just accounts with more than $1000$ followers.
+            </p>
+
+            <div class="container-fluid py-1">
+                <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_foll_1000.html"></iframe>
+                <p align = 'center'>
+                  Figure 2: Network of accounts with more than 1000 followers, colors according to the language.
+                </p>
+            </div>
+
+            <div class="container-fluid py-1">
+                <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/communities_foll_1000.html"></iframe>
+                <p align = 'center'>
+                  Figure 3: Network of accounts with more than 1000 followers, colors according to the community.
+                </p>
+            </div>
 
             </div>
 
