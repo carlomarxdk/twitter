@@ -18,7 +18,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
     </head>
-     
+
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button class="navbar-toggler navbar-toggler-right" type="button"           data-toggle="collapse"
@@ -47,7 +47,7 @@
                 </ul>
             </div>
         </nav>
-        
+
         <div class=" jumbotron jumbotron jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
             <div class="container">
                 <h1 class="display-1 text-light text-uppercase">Fake Tweets</h1>
@@ -179,8 +179,42 @@
             <h1 class="display-5 ">Summary </h1>
             <p class='lead'>slace for the content</p>
 
+            <h4>
+              <a href ="./plots/daily_activity.html">
+              Daily activity of the troll-network
+              </a>
+            </h4>
+
+            <div class="container-fluid py-1">
+                <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/daily_activity.html"></iframe>
+                <p align = 'center'>
+                  Daily activity of all network (tweets/day).
+                </p>
+            </div>
+
+            <div class = 'row' height = '50%'>
+              <img src="./plots/loglog-like-dist.png"  width="70%">
+              <p align = "center">
+                Loglog-plot of the like distribution of all the Tweets in the dataset.
+              </p>
+            </div>
+
+            <div class = 'row' height = '50%'>
+              <img src="./plots/loglog-retw-dist.png"  width="70%">
+              <p align = "center">
+                Loglog-plot of the retweet distribution of all the Tweets in the dataset.
+              </p>
+            </div>
+
+            <div class = 'row' height = '50%'>
+              <img src="./plots/loglog-follow-dist.png"  width="70%">
+              <p align = "center">
+                Loglog-plot of the follower distribution of all the account in the dataset
+              </p>
+            </div>
+
         </div>
-        
+
 
 
         <!-- Optional JavaScript -->
