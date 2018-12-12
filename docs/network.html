@@ -59,7 +59,7 @@
         <div class= "container mt-5">
             <blockquote class="blockquote">
                 <p class="lead">
-                    A network was created using <b>mentions</b>, <b>retweets</b> and <b>replies</b> of each account (to establish links). When we mention the <b>network</b>, we reference to the <b>largest connected component</b>. Approximatelly $>95\%$ of nodes (i.e. tweeter accounts) are in the largest connected component.
+                    A network was created using <b>mentions</b>, <b>retweets</b> and <b>replies</b> of each account (to establish links). When we mention the <b>network</b>, we reference to the <b>largest connected component</b>. Approximatelly <b>95%</b> of nodes (i.e. tweeter accounts) are in the largest connected component.
                 </p>
             </blockquote>
             <h1 class = "display-5">Full Network</h1>
@@ -69,14 +69,15 @@
                 </button>
                     Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays. You can open the <a href = "./plots/languages_full_network.html"> Full Network</a> in a separate window.
             </div>
+        </div>
             
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_full_network.html"></iframe>
-                  <p class= 'ļead' align = 'center'>
+                  <p class='ļead' align = 'center'>
                     Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$.
                   </p>
               </div>
-
+    <div class = 'container'>
             <p class='lead'>
                 There are different clusters, most of them are form according to the <b>language of nodes</b>.
               Two very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
@@ -84,13 +85,13 @@
               However, there is also a completely seperate english cluster forming on the lower right, without a lot of accounts from different languages.
             </p>
 
-            <p>
-              For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>.
+            <p class="lead">
+              For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>).
             </p>
 
             <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Subnetwork > 1000 Follower</a></h1>
 
-            <p>
+            <p class="lead">
               Since this network is very big, and makes exploration of the relationshib between the differen accounts very difficult, a spereate network was created for just accounts with more than $1000$ followers.
             </p>
 
