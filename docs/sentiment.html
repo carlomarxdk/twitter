@@ -58,7 +58,7 @@
 
         <div class= "container mt-5">
             <blockquote class="blockquote">
-                <p class="mb-0">
+                <p class="lead">
                   The <b><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0026752">LabMT</a>
                   </b> wordlist was used to calculate the sentiment of each Tweet and profile description.
                   These results were than analyzed in different ways.
@@ -78,75 +78,82 @@
                 <p align="center">Figure 2: Profile Descriptions</p>
               </div>
             </div>
-            <div class = "row">
-              <p>
+              <p class="lead">
                 The histogram of the sentiments of the tweets/descprtions can be found in Figure 1/2.
                 The average for the Tweets is $\approx 5.20 \pm 0.34$, and for the profile descprtions: $\approx 5.54 \pm 0.63$.
               </p>
-              <p>
+              <p class="lead">
                 While the sentiment of the profile descriptions seems to be a little bit lower, the difference is inside the standard deviation, and therefore not significant.
                 In general, the distribution of the profile descriptions is much broader, than the one for the tweet sentiments.
                 However, this might be purely explained just by the fact, that the sample size for the descprtions is much lower.
               </p>
-              <p>
+              <p class="lead">
                 In the Tweet histogram, there are outliers at certain sentiment values.
                 Those were removed, and to make those 2 distriutions directly compareable, both distributions were divided by ther maximum.
                 The result can be seen in the following <a href = "./plots/hist_sentiment_tw_desc.html">figure</a>:
               </p>
-
-              <div class="container-fluid py-1">
+        </div>
+              <div class="container-fluid">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/hist_sentiment_tw_desc.html"></iframe>
                   <p align = "center">
                     Figure 3: histogram of the sentiment of Tweets and Descriptions.
                   </p>
               </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-ld-7 col-md-7 col-xs-12 col-sm-12 ">
+                    <h2 class ="display-5">Correlation</h2>
 
-              <h2 class ="display-5">Correlation</h2>
-              <p>
-                It was also evaluated whether there is any correlation between the sentiment of the tweets, and the sentiment of the according profile descriptions.
-                For this a heatmap of the descprtion sentiments to the tweet sentiments was created.
-                However, as can be seen, there does not seem to be any significant correlation.
-              </p>
-              <div class = 'row' height = '50%'>
+                    <p class="lead">
+                    It was also evaluated whether there is any correlation between the sentiment of the tweets, and the sentiment of the according profile descriptions.
+                    For this a heatmap of the descprtion sentiments to the tweet sentiments was created.
+                    However, as can be seen, there does not seem to be any significant correlation.
+                    </p>
+                </div>
+                <div class="col-ld-5 col-md-5 col-xs-12 col-sm-12 " align='center'>   
                 <img src="./plots/tw_sents-desc_sents.png"  width="70%">
-                <p align = "center">
+                <p class="lead" align = "center">
                   Figure 4: Heatmap of description-sentiment to tweet-sentiments.
                 </p>
-              </div>
+                </div>
+            </div>
+
 
               <h2 class ="display-5">
                 Likes/Followers according to Sentiment of Tweets/Descriptions
               </h2>
 
-              <div class = 'row' width = '80%' align = "center">
+              <div class = 'row' align = "center">
                 <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
-                  <img src="./plots/sent-like-dist.png"  width="100%" align = "center">
+                  <img src="./plots/sent-like-dist.png"  width="90%" align = "center">
                   <p></p>
-                  <p align="center">Figure 5: Sentiment - log(#Likes) heatmap.</p>
+                  <p class='lead' align="center">Figure 5: Sentiment - log(#Likes) heatmap.</p>
                 </div>
                 <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
-                  <img src="./plots/sent-retw-dist.png"  width="100%">
+                  <img src="./plots/sent-retw-dist.png"  width="90%">
                   <p></p>
-                  <p align="center">Figure 6: Sentiment - log(#Retweets) heatmap.</p>
+                  <p class='lead' align="center">Figure 6: Sentiment - log(#Retweets) heatmap.</p>
                 </div>
               </div>
-              <p>
+              <p class="lead">
                 Figure 5 and 6 present the disribution of the Sentiment, according to the number of likes/retweets of the according Tweet.
                 However, again, there are no significan features apparent, that would suggest the sentiment of a tweet, and the number of retweets/likes it recieves.
               </p>
 
 
             </div>
-
-            <h1 class ="display-5">Average Sentiment per Day</h1>
-            <div class="row">
-              <p>
+            <div class='container'>
+                <h1 class ="display-5">Average Sentiment per Day</h1>
+              <p class="lead">
                 In the following <a href = "./plots/average_sentiment_per_day.html">figure</a>, the average sentiments for the <b>troll</b> tweets, and for <b><a href="https://hedonometer.org/about.html">whole</a></b> twitter can be compared. (Not the whole of Twitter, but Twitter’s Gardenhose feed, which represents approximately 10% of all Tweets.)
               </p>
-              <div class="container-fluid py-1">
+        </div>
+    
+              <div class="container-fluid">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/average_sentiment_per_day.html"></iframe>
               </div>
-            <p>
+        <div class="container">
+            <p class="lead">
               Some differences in the 2 sentiment time series are immediately striking.
               Firstly, till April 2012, the day-to-day difference in the sentiments of the troll tweets is very high (i.e.: It jumps around a lot.)
               The reason being is, that the number of Tweets in the dataset for that timepriod is very low, therefore the day-to-day variance is also higher.
@@ -155,67 +162,64 @@
               The average troll tweets is therefore significantely more negative, than the average Tweet.
             </p>
 
-            <p>
+            <p class="lead">
               To make this plot more explorable and make it easier to compare changes in activity across both time series, they were <b>standardized</b>.
               So if $S(t)$ is the time series, the standardized version of the time series is $\bar{S}(t) = \left( S(t) - \text{avg}(S)\right)/\text{std}(S)$.
               This plot can be found in the following <a href = "./plots/norm_sentiment_per_day.html">figure</a>.
             </p>
-              <div class="container-fluid py-1">
+        </div>
+        <div class="container-fluid">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/norm_sentiment_per_day.html"></iframe>
-              </div>
-            <p>
+        </div>
+        <div class="container">
+            <p class="lead">
               Whats also striking about the troll sentiments is, that there seem to be well defined time periods, when the sentiment is lower.
               For example, 10.May 2013 to 31.Jan 2014, the sentiment is about $0.15$ points lower than the sentiment before/after that time period.
               Another dropoff happens in the period from the 19.Oct 2015 to the 27.Dec 2015.
-              This might be explained by specific operations of the <b>IRA</b> in that time periods.
+                This might be explained by specific operations of the <abbr title="Internet Research Agency"><b>IRA</b></abbr> in that time periods.
               However, this is just speculation and could not verified any further.
             </p>
           </div>
-        </div>
 
-        <div class= "container mt-5">
+        <div class= "container">
           <h1 class = "display-5">Vacabulary Analysis</h1>
-          <div class = 'row' width = '80%'>
-            <p><i>Disclaimer: For out vocabulary analysis, we focus on <b>english</b> tweets only.</i></p>
-            <p>Our dataset contains <b>9 years</b> of troll tweets. In the first few years, less than 50 tweets were published by these accounts every month.
+            <small><i>Disclaimer: For out vocabulary analysis, we focus on <b>english</b> tweets only.</i></small>
+            
+            <p class="lead">Our dataset contains <b>9 years</b> of troll tweets. In the first few years, less than 50 tweets were published by these accounts every month.
               Since July 2014, the monthly amount of tweets increased rapidly to tens and even <b>hundreds of thousends</b>.
               Therefore, our analysis focuses only on the tweets published between January 2014 and May 2018.
             </p>
-          </div>
-          <div class = "row">
-            <p>From the plot below it can be seen that the tweets are very often targetting the the U.S. elections. Starting in June 2015, <b>Barrack Obama</b> was mentioned in <b>11 thousand tweets</b>.
+            <p class='lead'>From the plot below it can be seen that the tweets are very often targetting the the U.S. elections. Starting in June 2015, <b>Barrack Obama</b> was mentioned in <b>11 thousand tweets</b>.
               That amount decreased over the following months and in December 2015 the accounts started to focus more on <b>Donald Trump</b>.
               In September 2016, <b>Hillary Clinton</b> was mentioned in more than 5000 tweets (similar to Donald Trump).
               What we can see afterwards is decreasing number of tweets mentioning Hillary Clinton and, on the other side, increasing number of tweets mentioning Donald Trump.
             </p>
-            <p>
+            <p class="lead">
               An interesting situation can be seen in August 2017, when there is a peak in the number of tweets about <b>Donald Trump</b> as well as tweets about <b>America</b>.
               This situation can be linked to the twitter escalation from Donald Trump towards North Korea after the tweet that America's military capabilities against North Korea are "locked and loaded"
               <a href="https://web.archive.org/web/20170811144232/https://www.washingtonpost.com/news/post-politics/wp/2017/08/11/military-is-locked-and-loaded-trump-says-in-latest-warning-to-north-korea/">[The Washington Post]</a>.
               However, further analysis is necessary to validate this hypothesis.
             </p>
-          </div>
         </div>
 
         <div class="container-fluid">
             <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/vocab_per_month_bar_chart.html"></iframe>
         </div>
 
-        <div class= "container mt-5">
+        <div class= "container">
           <h1 class = "display-5">Wordclouds</h1>
-          <div class = 'row' width = '80%'>
-            <p>
+            <p class="lead">
               To extend our vocabulary analysis, we present the most common words for each month in the form of a wordcloud.
               What we observe from the tweets starting in July 2014 is that initially, the troll accounts focused on expressing feelings - either positive with words like <b>love</b> and <b>like</b>, or negative (<b>foke</b>).
             </p>
-            <p>
+            <p class="lead">
               In 2016, the trolls focused on some of the biggest events in the U.S. - the presinedtial elections (<b>trump</b>) as well as the major shootings in the U.S. in that year (<b>people</b>, <b>killed</b>, <b>police</b>, <b>black</b>).
             </p>
-            <p>
+            <p class="lead">
               After the US elections, the focus was moving hand in hand with the scandals occurring around the newly elected president Donald Trump.
               FBI tax investigation, or Robert Mueller investigation about cooperation with the Russian government in efforts to interfere in the 2016 presidential elections.
             </p>
-            <p>
+            <p class="lead">
               Finally, an interesting observation can be seen in July and August 2015 where the tweets focused mostly on physical health (indicated by words like <b>workout</b>, <b>exercise</b>, <b>weight</b>, <b>fitness</b>, and similar).
             </p>
           </div>
@@ -252,7 +256,6 @@
 
 
 
-        </div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
