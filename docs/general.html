@@ -18,7 +18,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
     </head>
-     
+
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button class="navbar-toggler navbar-toggler-right" type="button"           data-toggle="collapse"
@@ -47,50 +47,172 @@
                 </ul>
             </div>
         </nav>
-        
+
         <div class=" jumbotron jumbotron jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
             <div class="container">
                 <h1 class="display-1 text-light text-uppercase">Fake Tweets</h1>
                 <span class="lead lead-lg display-3">Overview</span>
             </div>
         </div>
-        <div class="container">
-            <h1 class="display-5 py-2">Data</h1>
+        <div class="container py-3">
+            <h1 class="display-5 ">Data</h1>
+            <h4 class='lead'>Recently Tweeter has released a huge dataset that contains tweets posted by the troll acounts. The dataset set is publicly available at the <a href="https://about.twitter.com/en_us/values/elections-integrity.html#data">Tweeter official page</a>.</h4>
+            <p></p>
             <div class="row">
-                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
-                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card bg-primary text-white mb-1 text-center bg-danger">       <div class="card-body">
                                 <h1 class="display-5">5.3 GB</h1>
                                   <hr class="my-1">
                                 <h4>in size</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
-                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
-                                <h1>3.5 GB</h1>
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card bg-dark text-white mb-1 text-center">       <div class="card-body">
+                                <h1 class="display-5">10m</h1>
                                   <hr class="my-1">
-                                <h4>in size</h4>
+                                <h4>tweets</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
-                    <div class="card bg-primary text-white mb-1 text-center bg-danger">       <div class="card-body">
-                                <h1>3.5 GB</h1>
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card bg-dark text-white mb-1 text-center ">       <div class="card-body">
+                                <h1 class="display-5">31</h1>
                                   <hr class="my-1">
-                                <h4>in size</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-ld-3 col-md-3 col-xs-2 col-sm-2">
-                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
-                                <h1>3.5 GB</h1>
-                                  <hr class="my-1">
-                                <h4>in size</h4>
+                                <h4>variables</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container-fluid  bg-light py-3 text-white">
+            <div class="container">
+                 <h1 class="display-5 py-2 text-dark ">Network</h1>
+          <div class="row">
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card text-white mb-1 text-center bg-dark">       <div class="card-body">
+                                <h1 class="display-5">3k</h1>
+                                  <hr class="my-1">
+                                <h4>nodes</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card bg-dark text-white mb-1 text-center">       <div class="card-body">
+                                <h1 class="display-5">~2k</h1>
+                                  <hr class="my-1">
+                                <h5>largest component</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
+                    <div class="card bg-dark text-white mb-1 text-center ">       <div class="card-body">
+                                <h1 class="display-5">160k</h1>
+                                  <hr class="my-1">
+                                <h4>links</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container-fluid  bg-dark py-3 text-white">
+            <div class="container">
+                 <h1 class="display-5 py-2">Variables / Features</h1>
+                <p class="lead">Most used variables during the project:</p>
+                <table class="table table-hover table-striped mt-5 ml-5">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Variable</th>
+                            <th>Discription</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    <tr>
+      <td>tweetid</td>
+      <td>tweet indefication number (unique per tweet)</td>
+    </tr>
+    <tr>
+      <td>userid</td>
+      <td>hashed if less than 5k followers</td>
+    </tr>
+    <tr>
+      <td>user_profile_description</td>
+      <td>description at the time of suspension</td>
+    </tr>
+
+    <tr>
+      <td>account_language</td>
+      <td>user specified account language</td>
+    </tr>
+    <tr>
+      <td>tweet_time</td>
+      <td>according to the UTC</td>
+    </tr>
+    <tr>
+      <td>tweet_text</td>
+      <td>text of the tweet</td>
+    </tr>
+    <tr>
+      <td>hashtags</td>
+      <td>a list of hashtags used in a tweet</td>
+    </tr>
+    <tr>
+      <td>retweet_userid</td>
+      <td>for retweets, the userid who authored the original tweet</td>
+    </tr>
+    <tr>
+      <td>user_mentions</td>
+      <td>a list fo userids who were mentioned in the tweet</td>
+    </tr>
+    <tr>
+      <td>likes_count</td>
+      <td>likes count for a tweet</td>
+    </tr>
+  </tbody>
+</table>
+                <p class="lead">and many more...</p>
+
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="display-5 mt-4 ">Summary </h1>
+            <small>
+              Full graph: 
+                <a href ="./plots/daily_activity.html">
+              daily activity of the troll-network
+              </a>
+            </small>
+        </div>
+            <div class="container-fluid">
+                <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/daily_activity.html"></iframe>
+
+            </div>
+            <div class = 'container-fluid'>
+                <div class="row">
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Likes</h1>
+                        <img src="./plots/loglog-like-dist.png" width="80%">
+                            <p class='lead' align = "center">
+                                Loglog-plot of the like distribution of all the Tweets in the dataset.
+                            </p>
+                    </div>
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Retweets</h1>
+
+                        <img src="./plots/loglog-retw-dist.png" width="80%">
+                            <p class='lead' align = "center">
+                                Loglog-plot of the retweet distribution of all the Tweets in the dataset.
+                            </p>
+                    </div>
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Followers</h1>
+                        <img src="./plots/loglog-follow-dist.png"  width="80%"><p class='lead 'align = "center">
+                Loglog-plot of the follower distribution of all the account in the dataset
+              </p>
+                    </div>
+        </div>
+
 
 
         <!-- Optional JavaScript -->
