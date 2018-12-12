@@ -170,11 +170,137 @@
               This might be explained by specific operations of the <b>IRA</b> in that time periods.
               However, this is just speculation and could not verified any further.
             </p>
+          </div>
+        </div>
+
+        <div class= "container mt-5">
+          <h1 class = "display-5">Vacabulary Analysis</h1>
+          <div class = 'row' width = '80%'>
+            <p><i>Disclaimer: For out vocabulary analysis, we focus on <b>english</b> tweets only.</i></p>
+            <p>Our dataset contains <b>9 years</b> of troll tweets. In the first few years, less than 50 tweets were published by these accounts every month.
+              Since July 2014, the monthly amount of tweets increased rapidly to tens and even <b>hundreds of thousends</b>.
+              Therefore, our analysis focuses only on the tweets published between January 2014 and May 2018.
+            </p>
+          </div>
+          <div class = "row">
+            <p>From the plot below it can be seen that the tweets are very often targetting the the U.S. elections. Starting in June 2015, <b>Barrack Obama</b> was mentioned in <b>11 thousand tweets</b>.
+              That amount decreased over the following months and in December 2015 the accounts started to focus more on <b>Donald Trump</b>.
+              In September 2016, <b>Hillary Clinton</b> was mentioned in more than 5000 tweets (similar to Donald Trump).
+              What we can see afterwards is decreasing number of tweets mentioning Hillary Clinton and, on the other side, increasing number of tweets mentioning Donald Trump.
+            </p>
+            <p>
+              An interesting situation can be seen in August 2017, when there is a peak in the number of tweets about <b>Donald Trump</b> as well as tweets about <b>America</b>.
+              This situation can be linked to the twitter escalation from Donald Trump towards North Korea after the tweet that America's military capabilities against North Korea are "locked and loaded"
+              <a href="https://web.archive.org/web/20170811144232/https://www.washingtonpost.com/news/post-politics/wp/2017/08/11/military-is-locked-and-loaded-trump-says-in-latest-warning-to-north-korea/">[The Washington Post]</a>.
+              However, further analysis is necessary to validate this hypothesis.
+            </p>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+            <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/vocab_per_month_bar_chart.html"></iframe>
+        </div>
+
+        <div class= "container mt-5">
+          <h1 class = "display-5">Wordclouds</h1>
+          <div class = 'row' width = '80%'>
+            <p>
+              To extend our vocabulary analysis, we present the most common words for each month in the form of a wordcloud.
+              What we observe from the tweets starting in July 2014 is that initially, the troll accounts focused on expressing feelings - either positive with words like <b>love</b> and <b>like</b>, or negative (<b>foke</b>).
+            </p>
+            <p>
+              In 2016, the trolls focused on some of the biggest events in the U.S. - the presinedtial elections (<b>trump</b>) as well as the major shootings in the U.S. in that year (<b>people</b>, <b>killed</b>, <b>police</b>, <b>black</b>).
+            </p>
+            <p>
+              After the US elections, the focus was moving hand in hand with the scandals occurring around the newly elected president Donald Trump.
+              FBI tax investigation, or Robert Mueller investigation about cooperation with the Russian government in efforts to interfere in the 2016 presidential elections.
+            </p>
+            <p>
+              Finally, an interesting observation can be seen in July and August 2015 where the tweets focused mostly on physical health (indicated by words like <b>workout</b>, <b>exercise</b>, <b>weight</b>, <b>fitness</b>, and similar).
+            </p>
+          </div>
+          <div class = "row justify-content-center mb-2">
+            <div id="year-buttons" class="btn-group">
+                <button type="button" class="btn btn-outline-dark active" year="2014">2014</button>
+                <button type="button" class="btn btn-outline-dark" year="2015">2015</button>
+                <button type="button" class="btn btn-outline-dark" year="2016">2016</button>
+                <button type="button" class="btn btn-outline-dark" year="2017">2017</button>
+                <button id="last-year-btn" type="button" class="btn btn-outline-dark" year="2018">2018</button>
+            </div>
+          </div>
+          <div class = "row justify-content-center">
+            <div id="month-buttons" class="btn-group">
+              <button id="first-month-btn" type="button" class="btn btn-outline-dark active" month="1">Jan</button>
+              <button type="button" class="btn btn-outline-dark" month="2">Feb</button>
+              <button type="button" class="btn btn-outline-dark" month="3">Mar</button>
+              <button type="button" class="btn btn-outline-dark" month="4">Apr</button>
+              <button type="button" class="btn btn-outline-dark" month="5">May</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="6">Jun</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="7">Jul</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="8">Aug</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="9">Sep</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="10">Oct</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="11">Nov</button>
+              <button type="button" class="btn btn-outline-dark no-2018" month="12">Dec</button>
+            </div>
+          </div>
+          <div class = "row justify-content-center">
+            <div id="wordcloud-container" class="text-center" style="height: 700px;">
+                <img id="wordcloud-img" src="./plots/vocab-wordcloud-lemmatized/wordcloud-2014-1.png"  width="100%">
+            </div>
+          </div>
+
+
+
+        </div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function(){
+            $("#year-buttons .btn").click(function() {
+              // Change current link to active and remove active from all others
+              $("#year-buttons .btn").removeClass("active");
+              $(this).addClass("active");
+              var year = $(this).attr("year");
+
+              var month = $("#month-buttons .active").attr("month");
+
+              if (year == 2018) {
+                $("#month-buttons .no-2018").prop("disabled", true);
+                $("#month-buttons .no-2018").prop("title", "No data")
+                if (month > 5) {
+                  month = 1;
+                  $("#month-buttons .active").removeClass("active");
+                  $("#first-month-btn").addClass("active");
+                }
+              } else {
+                $("#month-buttons .no-2018").prop("disabled", false);
+                $("#month-buttons .no-2018").removeProp("title");
+              }
+
+              $("#wordcloud-img").remove();
+              $("#wordcloud-container").append('<img id="wordcloud-img" src="./plots/vocab-wordcloud-lemmatized/wordcloud-' + year + '-' + month + '.png"  width="100%">');
+
+            });
+
+            $("#month-buttons .btn").click(function() {
+              // Change current link to active and remove active from all others
+              $("#month-buttons .btn").removeClass("active");
+              $(this).addClass("active");
+
+              var month = $(this).attr("month");
+
+              var year = $("#year-buttons .active").attr("year");
+
+              $("#wordcloud-img").remove();
+              $("#wordcloud-container").append('<img id="wordcloud-img" src="./plots/vocab-wordcloud-lemmatized/wordcloud-' + year + '-' + month + '.png"  width="100%">');
+            });
+          });
+        </script>
     </body>
 </html>
