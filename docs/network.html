@@ -58,22 +58,28 @@
         </div>
         <div class= "container mt-5">
             <blockquote class="blockquote">
-                <p class="mb-0">
-                  Using the mentions,retweets and replys of each account, a network was created (If I talk about the network here, I always talk about the largest connected component. While there were always some unconnected nodes, most of them ($>95\%$) were always in the largest component.)
+                <p class="lead">
+                    A network was created using <b>mentions</b>, <b>retweets</b> and <b>replies</b> of each account (to establish links). When we mention the <b>network</b>, we reference to the <b>largest connected component</b>. Approximatelly $>95\%$ of nodes (i.e. tweeter accounts) are in the largest connected component.
                 </p>
             </blockquote>
-            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Full Network</a></h1>
-
+            <h1 class = "display-5">Full Network</h1>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                    Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays. You can open the <a href = "./plots/languages_full_network.html"> Full Network</a> in a separate window.
+            </div>
+            
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_full_network.html"></iframe>
-                  <p align = 'center'>
-                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$. (Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays.)
+                  <p class= 'ļead' align = 'center'>
+                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$.
                   </p>
               </div>
 
-            <p>
-              There are different clusters, most of them form according to the language of the nodes.
-              2 very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
+            <p class='lead'>
+                There are different clusters, most of them are form according to the <b>language of nodes</b>.
+              Two very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
               They stand in contrast to the russian cluster, which is very interconnected with a lot of english accounts.
               However, there is also a completely seperate english cluster forming on the lower right, without a lot of accounts from different languages.
             </p>
