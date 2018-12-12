@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Fake Tweets Network</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap4-hello-world.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style type="text/css">
+        #wordcloud-img {
+          max-width: 800px;
+          max-height: 800px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
+            <div class="container">
+                <h1 class="display-1 text-light text-uppercase">Fake Tweets</h1>
+                <span class="lead lead-lg display-3">A Network Study</span>
+            </div>
+        </div>
+        <div class="container py-5">
+          <ul class="nav nav-pills">
+              <li class="nav-item">
+              <a class="nav-link" href="index.html">General Description</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Network Analysis</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" href="#!">Vocabulary Analysis</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="hashtags.html">Hashtag Analysis</a>
+              </li>
+            </ul>
+        </div>
+
+        <div class= "container py-3">
+            <h3 align="center" class="display-3">Vacabulary Analysis</h3>
+            <blockquote class="blockquote">
+                <p class="mb-2"><i>Disclaimer: For out vocabulary analysis, we focus on <b>english</b> tweets only.</i></p>
+
+                <p class="mb-0">Our dataset contains <b>9 years</b> of troll tweets. In the first few years, less than 50 tweets was published by these accounts every month.
+                  Since July 2014, the monthly amount of tweets increased rapidly to tens and even <b>hundreds of thousends</b>.
+                  Therefore, our analysis focuses mostly on the tweets published between January 2014 and May 2018.
+                </p>
+            </blockquote>
+
+            <h1 class ="display-5"> Tweet Tokenizing</h1>
+            <p class="lead">
+              In order to get build the vocabulary of the tweets, we process each tweet separately to remove all twitter handles (retweets, references to other accounts), URLs, hashtags, and emojis.
+              The processed tweet is then tokenized and cleaned from stopwords, digits as well as currencies, and all words with less than 3 characters.
+              Finally, the tokens are normalized to lower case and lemmatized.
+              For each tweet, we return a set of distinct tokens.
+            </p>
+
+            <h1 class ="display-5"> TF-IDF</h1>
+            <p class="lead">To calculate the <span title="term frequency–inverse document frequency">TF-IDF</span> for the each word from our final vocabulary, we grouped the tweets into monthly bins.
+              We then calculated the TF-IDF for each month separately. The results, represented by wordclouds are described in the following section.
+            </p>
+
+            <h1 class ="display-5"> Wordclouds</h1>
+            <p class="lead">
+              In the second half of 2014 where the larger amount of tweets occurred, it seems to be common to tweet about something that the accounts care about as the dominant words are <b>love</b>, <b>life</b>, and <b>like</b>.
+              
+            </p>
+
+        </div>
+
+        <div class="container py-1">
+          <ul id="year-buttons" class="nav nav-pills justify-content-center">
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark active" year="2014">2014</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" year="2015">2015</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" year="2016">2016</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" year="2017">2017</button>
+              </li>
+              <li class="nav-item">
+                  <button id="last-year-btn" type="button" class="btn btn-outline-dark" year="2018">2018</button>
+              </li>
+          </ul>
+          <br/>
+          <ul id="month-buttons" class="nav nav-pills justify-content-center">
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark active" month="1">Jan</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" month="2">Feb</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" month="3">Mar</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" month="4">Apr</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" month="5">May</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="6">Jun</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="7">Jul</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="8">Aug</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="9">Sep</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="10">Oct</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="11">Nov</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark no-2018" month="12">Dec</button>
+              </li>
+            </ul>
+
+            <div id="wordcloud-container" class="text-center" style="height: 800px;">
+                <img id="wordcloud-img" src="../../vocab-wordcloud-lemmatized/wordcloud-2014-1.png"  width="100%">
+            </div>
+            <!-- <div id="carouselExampleControls" class="carousel slide">
+                <div class="carousel-inner">
+                    <div id="im-2014-1" class="carousel-item active"><img class="d-block w-100" src="../../vocab-wordcloud-lemmatized/wordcloud-2014-1.png" alt="First slide"><div>
+                    <div id="im-2014-2" class="carousel-item"><img class="d-block w-100" src="../../vocab-wordcloud-lemmatized/wordcloud-2014-2.png" alt="Second slide"><div>
+                    <div id="im-2014-3" class="carousel-item"><img class="d-block w-100" src="../../vocab-wordcloud-lemmatized/wordcloud-2014-3.png" alt="Third slide"><div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> -->
+        </div>
+
+        <div class="container-fluid py-1">
+
+            <iframe width="100%" height="500" frameborder="0" scrolling="no" src="//plot.ly/~germans.savcisens/65.embed?autosize=True"></iframe>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function(){
+          $("#year-buttons .btn").click(function() {
+            // Change current link to active and remove active from all others
+            $("#year-buttons .btn").removeClass("active");
+            $(this).addClass("active");
+            var year = $(this).attr("year");
+            if (year == 2018) {
+              $("#month-buttons .no-2018").prop("disabled", true);
+              $("#month-buttons .no-2018").prop("title", "No data")
+            } else {
+              $("#month-buttons .no-2018").prop("disabled", false);
+              $("#month-buttons .no-2018").removeProp("title");
+            }
+
+            var month = $("#month-buttons .active").attr("month");
+
+            $("#wordcloud-img").remove();
+            $("#wordcloud-container").append('<img id="wordcloud-img" src="../../vocab-wordcloud-lemmatized/wordcloud-' + year + '-' + month + '.png"  width="100%">');
+
+            // <img class="d-block w-100" src="../../vocab-wordcloud-lemmatized/wordcloud-2014-1.png" alt="First slide">
+            // console.log($("#carouselExampleControls .carousel-inner .active"));
+          });
+
+          $("#month-buttons .btn").click(function() {
+            // Change current link to active and remove active from all others
+            $("#month-buttons .btn").removeClass("active");
+            $(this).addClass("active");
+
+            var month = $(this).attr("month");
+
+            var year = $("#year-buttons .active").attr("year");
+
+            $("#wordcloud-img").remove();
+            $("#wordcloud-container").append('<img id="wordcloud-img" src="../../vocab-wordcloud-lemmatized/wordcloud-' + year + '-' + month + '.png"  width="100%">');
+          });
+        });
+		        // function changeImage() {
+            //   var el = document.getElementById("myDIV");
+            //   el.classList.toggle("active");
+            // }
+        </script>
+    </body>
+</html>

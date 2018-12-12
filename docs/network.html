@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="hashtags.html">Hashtag Analysis</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="realevents.html">Real events</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -53,84 +56,96 @@
                 <span class="lead lead-lg display-3">Network Description</span>
             </div>
         </div>
-        <div>
-        <h1 class='display-5'>
-            Basics
-            </h1>
+        <div class="container mt-2">
+                    <div class="alert alert-danger" role="alert">
+            <strong>Note!</strong> It might take couple of seconds to load all the graphs.
         </div>
-        <div class= "container mt-5">
+        </div>
+
+        <div class= "container mt-2">
+
             <blockquote class="blockquote">
-                <p class="mb-0">
-                  Using the mentions,retweets and replys of each account, a network was created (If I talk about the network here, I always talk about the largest connected component. While there were always some unconnected nodes, most of them ($>95\%$) were always in the largest component.)
+                <p class="lead">
+                    A network was created using <b>mentions</b>, <b>retweets</b> and <b>replies</b> of each account (to establish links). When we mention the <b>network</b>, we reference to the <b>largest connected component</b>. Approximatelly <b>95%</b> of nodes (i.e. tweeter accounts) are in the largest connected component.
                 </p>
             </blockquote>
-            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Full Network</a></h1>
-
+            <h1 class = "display-5">Full Network</h1>
+            <div class="alert alert-primary " role="alert">
+                    Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays. You can open the <a href = "./plots/languages_full_network.html"> Full Network</a> in a separate window.
+            </div>
+        </div>
+            
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_full_network.html"></iframe>
-                  <p align = 'center'>
-                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$. (Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays.)
+                  <p class='lead' align = 'center'>
+                    Figure 1: Color according to Languages. Node size scaled after $\text{log}(\text{followers})$ of each account, with a minimum node size of $5$.
                   </p>
               </div>
-
-            <p>
-              There are different clusters, most of them form according to the language of the nodes.
-              2 very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
+    <div class = 'container'>
+            <p class='lead'>
+                There are different clusters, most of them are form according to the <b>language of nodes</b>.
+              Two very self contained clusters are the german (orange, upper middle) and the spanish cluster (turquoise, middle right).
               They stand in contrast to the russian cluster, which is very interconnected with a lot of english accounts.
               However, there is also a completely seperate english cluster forming on the lower right, without a lot of accounts from different languages.
             </p>
 
-            <p>
-              For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>.
+            <p class="lead">
+              For comparison, the same plot, but according to the communities (found using the <a href = "https://github.com/taynaud/python-louvain">louvain</a> algorithm can be found <a href = "./plots/communities_full_network.html">here</a>).
             </p>
 
-            <h1 class = "display-5"><a href = "./plots/languages_full_network.html">Subnetwork > 1000 Follower</a></h1>
-
-            <p>
-              Since this network is very big, and makes exploration of the relationshib between the differen accounts very difficult, a spereate network was created for just accounts with more than $1000$ followers.
+            <h1 class = "display-5">Subnetwork > 1000 Follower</h1>
+            <div class="alert alert-primary " role="alert">
+                    Because of the network size, this uses WebGL backend of plotly, might therefore look ugly on high-res displays. You can open the <a href = "./plots/languages_full_network.html"> Subnetwork</a> in a separate window.
+            </div>
+        
+            <p class="lead">
+                Since this network is very big, and makes exploration of the relationshib between the differen accounts very difficult, a spereate network was created for just accounts with more than <b>1000</b> followers.
             </p>
-
-            <div class="container-fluid py-1">
+        </div>
+            <div class="container-fluid">
                 <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/languages_foll_1000.html"></iframe>
-                <p align = 'center'>
+                <p class = 'lead' align = 'center'>
                   Figure 2: Network of accounts with more than 1000 followers, colors according to the language.
                 </p>
             </div>
 
-            <div class="container-fluid py-1">
+            <div class="container-fluid">
                 <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/communities_foll_1000.html"></iframe>
-                <p align = 'center'>
+                <p class='lead' align = 'center'>
                   Figure 3: Network of accounts with more than 1000 followers, colors according to the community.
                 </p>
             </div>
-
-            <h1 class = "display-5">
-              General Network measures
-            </h1>
-            The degree distribution found in figure 4 looks like a power law, but since the function is not very well behaved, which might be due to the underlying community structure of the network, it can not be definately stated, that it is a power law. (Running a linear regression returned $R \approx -0.9$)
-            <div class = 'row' width = '80%'>
-              <img src="./plots/loglog-degree-distribution.png"  width="70%">
-              <p align = "center">
+            <div class="container py-2">
+                <div class="row">
+                <div class="col-ld-7 col-md-7 col-xs-12 col-sm-12 ">
+                    <h1 class = "display-5">General Network measures</h1>
+                    <p class="lead">The degree distribution found in figure 4 looks like a power law, but since the function is not very well behaved, which might be due to the underlying community structure of the network, it can not be definately stated, that it is a power law. (Running a linear regression returned $R \approx -0.9$)</p>
+                    </div>
+                <div class="col-ld-5 col-md-5 col-xs-12 col-sm-12">
+                <img src="./plots/loglog-degree-distribution.png"  width="80%">
+                <p class='lead' align = "center">
                 Figure 4: Loglog-Plot of the degree-distribution of the full network.
-              </p>
+                </p>
+                    </div>
+                </div>
             </div>
-
+        <div class="container">
           <h1 class = "display-5">
             Analyzing the community structure
           </h1>
-
-          <p>
-            The accounts have 11 different languages, of these are (language-code, with the according number of nodes).
-            <p>
-              [('ar',28), ('de',111), ('en',2286), ('en-gb', 11), ('es',194), ('fr',11), ('id',1), ('it',7), ('ru',1013), ('uk',2), ('zh-cn',3)]
+          <p class='lead'>
+            The accounts have 11 different languages, of these are (language-code, with the according number of nodes):<code> [('ar',28), ('de',111), ('en',2286), ('en-gb', 11), ('es',194), ('fr',11), ('id',1), ('it',7), ('ru',1013), ('uk',2), ('zh-cn',3)]
+            </code>
             </p>
+            
+              <p class="lead">
             The value for the modularity based on the languages is $\approx 0.08$.
             So while the modularity is still positive, it is still very small, especially compared to the modularity for the communities found using the louvain-algorithm: $\approx 0.43$.
           </p>
 
-          <p>
+          <p class="lead">
             To get a sense of how good the languages correspond to the communities calculated through the louvain-algorithm, the confusion matrix was calculated (communities with less than 2 members were disregarded).
-            For the 3 big language-communities, the following results were found
+            For the 3 big language-communities, the following results were found:
             <p>
               <b>'de':</b> $98\%$ were in the same community.
               This further verifies that the community of german-troll accounts is very clustered and fairly disconnected from the rest of the troll-network.
@@ -153,30 +168,31 @@
             </p>
 
             <b>Conclusion</b>
-            <p>
+            <p class="lead">
               The <b>'de'</b> (german) and the <b>'es'</b> (spanish) are quiet clustered, however, the <b>'en'</b>(english) and <b>'ru'</b>(russian) community are both quiet intertwined with each other.
               However, this might also be due to the fact, that they are the quiet a bit bigger than the german and spanish one.
             </p>
-          </p>
-
-          <h4>$C(k)$-plot</h4>
-
-          <p>
-            It is also possible to show, that the network has got an underlying community structure by plotting the local clustering coefficient $C$ against the degree $k$ for each node, and than comparing this to a random network with the same degree-distribution (see figure 5).
-            (For comparison see <a href = "http://networksciencebook.com/chapter/9#advanced-9a">Network Science: Hierachy in Real Networks </a>)
-          </p>
-
-            <div class = 'row' width = '100%'>
-              <img src="./plots/cl-k.png"  width="100%" align = center>
-              <p align = "center">
+          
+        </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-ld-7 col-md-7 col-xs-12 col-sm-12 ">
+                    <h1 class="display-4">C(k)-plot</h1>
+                    <p class="lead"> It is also possible to show, that the network has got an underlying community structure by plotting the local clustering coefficient $C$ against the degree $k$ for each node, and than comparing this to a random network with the same degree-distribution (see figure 5).
+                    (For comparison see <a href = "http://networksciencebook.com/chapter/9#advanced-9a">Network Science: Hierachy in Real Networks </a>)
+                    </p>
+                </div>
+                <div class="col-ld-5 col-md-5 col-xs-12 col-sm-12">
+                    
+              <img src="./plots/cl-k.png"  width="90%" align = center>
+              <p class="lead" align = "center">
                 Figure 5: $C(k)$ plot of the network in purple, and $C(k)$ graph of a random network with the same degree-distribution (green).
               </p>
-            </div>
+                </div>
 
+        </div>
+                                    
 
-
-
-            </div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
