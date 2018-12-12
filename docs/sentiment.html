@@ -16,9 +16,9 @@
         </script>
         <script type="text/javascript" async
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-        </script>      
+        </script>
     </head>
-    
+
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button class="navbar-toggler navbar-toggler-right" type="button"           data-toggle="collapse"
@@ -52,7 +52,7 @@
                 <span class="lead lead-lg display-3">Vocabulary and Sentiments</span>
             </div>
         </div>
-        
+
         <div class= "container mt-5">
             <blockquote class="blockquote">
                 <p class="mb-0">
@@ -93,7 +93,45 @@
 
               <div class="container-fluid py-1">
                   <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/hist_sentiment_tw_desc.html"></iframe>
+                  <p align = "center">
+                    Figure 3: histogram of the sentiment of Tweets and Descriptions.
+                  </p>
               </div>
+
+              <h2 class ="display-5">Correlation</h2>
+              <p>
+                It was also evaluated whether there is any correlation between the sentiment of the tweets, and the sentiment of the according profile descriptions.
+                For this a heatmap of the descprtion sentiments to the tweet sentiments was created.
+                However, as can be seen, there does not seem to be any significant correlation.
+              </p>
+              <div class = 'row' width = '80%'>
+                <img src="./plots/tw_sents-desc_sents.png"  width="70%">
+                <p align = "center">
+                  Figure 4: Heatmap of description-sentiment to tweet-sentiments.
+                </p>
+              </div>
+
+              <h2 class ="display-5">
+                Likes/Followers according to Sentiment of Tweets/Descriptions
+              </h2>
+
+              <div class = 'row' width = '80%' align = "center">
+                <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
+                  <img src="./plots/sent-like-dist.png"  width="100%" align = "center">
+                  <p></p>
+                  <p align="center">Figure 5: Sentiment - log(#Likes) heatmap.</p>
+                </div>
+                <div class="col-ld-6 col-md-6 col-xs-6 col-sm-6">
+                  <img src="./plots/sent-retw-dist.png"  width="100%">
+                  <p></p>
+                  <p align="center">Figure 6: Sentiment - log(#Retweets) heatmap.</p>
+                </div>
+              </div>
+              <p>
+                Figure 5 and 6 present the disribution of the Sentiment, according to the number of likes/retweets of the according Tweet.
+                However, again, there are no significan features apparent, that would suggest the sentiment of a tweet, and the number of retweets/likes it recieves.
+              </p>
+
 
             </div>
 
