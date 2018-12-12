@@ -18,7 +18,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
     </head>
-     
+
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button class="navbar-toggler navbar-toggler-right" type="button"           data-toggle="collapse"
@@ -46,7 +46,7 @@
                 </ul>
             </div>
         </nav>
-        
+
         <div class=" jumbotron jumbotron jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0" >
             <div class="container">
                 <h1 class="display-1 text-light text-uppercase">Fake Tweets</h1>
@@ -103,6 +103,69 @@
                   Figure 3: Network of accounts with more than 1000 followers, colors according to the community.
                 </p>
             </div>
+
+            <h1 class = "display-5">
+              General Network measure
+            </h1>
+            The degree distribution found in figure 4 looks like a power law, but since the function is not very well behaved, which might be due to the underlying community structure of the network, it can not be definately stated, that it is a power law. (Running a linear regression returned $R \approx -0.9$)
+            <div class = 'row' width = '80%'>
+              <img src="./plots/loglog-degree-distribution.png"  width="70%">
+              <p align = "center">
+                Figure 4: Loglog-Plot of the degree-distribution of the full network.
+              </p>
+            </div>
+
+          <h1 class = "display-5">
+            Analyzing the community structure
+          </h1>
+
+          <p>
+            The accounts have 11 different languages, of these are (language-code, with the according number of nodes).
+            <p>
+              [('ar',28), ('de',111), ('en',2286), ('en-gb', 11), ('es',194), ('fr',11), ('id',1), ('it',7), ('ru',1013), ('uk',2), ('zh-cn',3)]
+            </p>
+          </p>
+
+          <p>
+            To get a sense of how good the languages correspond to the communities calculated through the louvain-algorithm, the confusion matrix was calculated (communities with less than 2 members were disregarded).
+            For the 3 big language-communities, the following results were found
+            <p>
+              <b>'de':</b> $98\%$ were in the same community.
+              This further verifies that the community of german-troll accounts is very clustered and fairly disconnected from the rest of the troll-network.
+            </p>
+
+            <p>
+              <b>'en':</b> $55\%$ are in the same/biggest community.
+              However, the rest is not spaced out evenly, but there is a seccond subcommunity forming with, and together they correspond to $66\%$ of the nodes with language 'en'.
+            </p>
+
+            <p>
+              <b>'es':</b> $44\%$ are member of the biggest community.
+              However, there is a second, equally big community, which also has mostly just 'es' members, together they correspond to $75\%$ of the 'es'-nodes.
+            </p>
+
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+          </p>
+
+          <p>
+            It is also possible to show, that the network has got an underlying community structure by plotting the local clustering coefficient $C$ against the degree $k$ for each node, and than comparing this to a random network with the same degree-distribution (see figure 5).
+            (For comparison see <a href = "http://networksciencebook.com/chapter/9#advanced-9a">Network Science: Hierachy in Real Networks </a>)
+          </p>
+
+            <div class = 'row' width = '100%'>
+              <img src="./plots/cl-k.png"  width="100%" align = center>
+              <p align = "center">
+                Figure 5: $C(k)$ plot of the network in purple, and $C(k)$ graph of a random network with the same degree-distribution (green).
+              </p>
+            </div>
+
+
+
 
             </div>
 
