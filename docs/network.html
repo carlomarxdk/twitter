@@ -105,7 +105,7 @@
             </div>
 
             <h1 class = "display-5">
-              General Network measure
+              General Network measures
             </h1>
             The degree distribution found in figure 4 looks like a power law, but since the function is not very well behaved, which might be due to the underlying community structure of the network, it can not be definately stated, that it is a power law. (Running a linear regression returned $R \approx -0.9$)
             <div class = 'row' width = '80%'>
@@ -124,6 +124,8 @@
             <p>
               [('ar',28), ('de',111), ('en',2286), ('en-gb', 11), ('es',194), ('fr',11), ('id',1), ('it',7), ('ru',1013), ('uk',2), ('zh-cn',3)]
             </p>
+            The value for the modularity based on the languages is $\approx 0.08$.
+            So while the modularity is still positive, it is still very small, especially compared to the modularity for the communities found using the louvain-algorithm: $\approx 0.43$.
           </p>
 
           <p>
@@ -145,12 +147,19 @@
             </p>
 
             <p>
-
+              <b>'ru':</b> $43\%$ are member of the biggest community.
+              However, this community is overlapping quiet a lot with a 'en'-community ($396$ nodes are 'ru' and $91$ are 'en'.)
+              3 of the 4 other big 'ru' communites are also overlapping quiet a bit with 'en' communities, however, there is one community with $89$ members, that has only $7$ 'en' members.
             </p>
-            <p>
 
+            <b>Conclusion</b>
+            <p>
+              The <b>'de'</b> (german) and the <b>'es'</b> (spanish) are quiet clustered, however, the <b>'en'</b>(english) and <b>'ru'</b>(russian) community are both quiet intertwined with each other.
+              However, this might also be due to the fact, that they are the quiet a bit bigger than the german and spanish one.
             </p>
           </p>
+
+          <h4>$C(k)$-plot</h4>
 
           <p>
             It is also possible to show, that the network has got an underlying community structure by plotting the local clustering coefficient $C$ against the degree $k$ for each node, and than comparing this to a random network with the same degree-distribution (see figure 5).
