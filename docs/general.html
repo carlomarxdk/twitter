@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
-                    <div class="card bg-primary text-white mb-1 text-center">       <div class="card-body">
+                    <div class="card bg-dark text-white mb-1 text-center">       <div class="card-body">
                                 <h1 class="display-5">10m</h1>
                                   <hr class="my-1">
                                 <h4>tweets</h4>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
-                    <div class="card bg-primary text-white mb-1 text-center ">       <div class="card-body">
+                    <div class="card bg-dark text-white mb-1 text-center ">       <div class="card-body">
                                 <h1 class="display-5">31</h1>
                                   <hr class="my-1">
                                 <h4>variables</h4>
@@ -87,7 +87,7 @@
         </div>
         <div class="container-fluid  bg-light py-3 text-white">
             <div class="container">
-                 <h1 class="display-5 py-2 ">Network</h1>
+                 <h1 class="display-5 py-2 text-dark ">Network</h1>
           <div class="row">
                 <div class="col-ld-4 col-md-4 col-xs-4 col-sm-4">
                     <div class="card text-white mb-1 text-center bg-dark">       <div class="card-body">
@@ -175,44 +175,42 @@
 
             </div>
         </div>
-        <div class="container py-3">
-            <h1 class="display-5 ">Summary </h1>
-            <p class='lead'>slace for the content</p>
-
-            <h4>
-              <a href ="./plots/daily_activity.html">
-              Daily activity of the troll-network
+        <div class="container">
+            <h1 class="display-5 mt-4 ">Summary </h1>
+            <small>
+              Full graph: 
+                <a href ="./plots/daily_activity.html">
+              daily activity of the troll-network
               </a>
-            </h4>
-
-            <div class="container-fluid py-1">
+            </small>
+        </div>
+            <div class="container-fluid">
                 <iframe width="100%" height="500" frameborder="0" scrolling="no" src="./plots/daily_activity.html"></iframe>
-                <p align = 'center'>
-                  Daily activity of all network (tweets/day).
-                </p>
-            </div>
 
-            <div class = 'container'>
-              <img src="./plots/loglog-like-dist.png"  width="70%">
-              <p align = "center">
-                Loglog-plot of the like distribution of all the Tweets in the dataset.
-              </p>
             </div>
+            <div class = 'container-fluid'>
+                <div class="row">
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Likes</h1>
+                        <img src="./plots/loglog-like-dist.png" width="80%">
+                            <p align = "center">
+                                Figure 1: Loglog-plot of the like distribution of all the Tweets in the dataset.
+                            </p>
+                    </div>
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Retweets</h1>
 
-            <div class = 'row'>
-              <img src="./plots/loglog-retw-dist.png"  width="70%">
-              <p align = "center">
-                Loglog-plot of the retweet distribution of all the Tweets in the dataset.
-              </p>
-            </div>
-
-            <div class = 'row' height = '50%'>
-              <img src="./plots/loglog-follow-dist.png"  width="70%">
-              <p align = "center">
+                        <img src="./plots/loglog-retw-dist.png" width="80%">
+                            <p align = "center">
+                                Figure 2: Loglog-plot of the retweet distribution of all the Tweets in the dataset.
+                            </p>
+                    </div>
+                    <div class="col-ld-4 col-md-4 col-xs-12 col-sm-12 " align="center">
+                        <h1 class="display-5">Followers</h1>
+                        <img src="./plots/loglog-follow-dist.png"  width="80%"><p class='lead 'align = "center">
                 Loglog-plot of the follower distribution of all the account in the dataset
               </p>
-            </div>
-
+                    </div>
         </div>
 
 
